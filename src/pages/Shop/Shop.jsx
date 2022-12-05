@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
 import { Col, Container, Row } from 'reactstrap'
 import products from '../../assets/data/products'
 import Helmet from '../../components/Helmet/Helmet'
@@ -7,6 +8,7 @@ import CommonSection from '../../components/UI/CommonSection'
 import ProductList from '../../components/UI/ProductList'
 import '../../styles/shop.scss'
 const Shop = () => {
+  const {t} = useTranslation(["shop"])
   const [productsData, setProductsData] = useState(products)
 
 
@@ -19,7 +21,7 @@ const Shop = () => {
   }
   return (
     <Helmet title="Shop">
-      <CommonSection  title={"Products"} />
+      <CommonSection  title={t("common")} />
       <section>
         <Container>
           <Row>

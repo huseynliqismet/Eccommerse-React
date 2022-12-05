@@ -10,7 +10,9 @@ import { cartActions } from '../../redux/slices/cartSlice'
 import { toast } from 'react-toastify'
 import ProductList from '../../components/UI/ProductList'
 import '../../styles/product-details.scss'
+import { useTranslation } from 'react-i18next'
 const ProductDetails = () => {
+  const { t } = useTranslation(["productDetail"])
 
   const [tab, setTab] = useState("desc")
   const [rating, setRating] = useState(null)
@@ -77,17 +79,17 @@ const ProductDetails = () => {
               </div>
               <div className="d-flex align-items-center gap-6">
                 <span className="product__price">${price}</span>
-                <span> Category: {category.toUpperCase()}</span>
+                <span> {t('category')}: {category.toUpperCase()}</span>
               </div>
 
               <p className="mt-3">{shortDesc}</p>
               <motion.button whileTap={{ scale: 1.1 }} className="buy__btn mt-4 btn btn-primary" onClick={addToCart}>
-                Add To Cart
+                {t("addToCart")}
               </motion.button>
             </div>
           </Col>
           <Col lg="12">
-            <h2 className="related__title">Oxsar mehsullar</h2>
+            <h2 className="related__title">{t("similar")}</h2>
           </Col>
           <ProductList data={relatedProducts}/>
 

@@ -33,76 +33,7 @@ const Home = () => {
     setPopularProducts(filteredPopularProducts);
   }, []);
   return (
-    // <Helmet title={"Ana sehife"}>
-    //   <section className="hero__section">
-    //     <Container>
-    //       <Row>
-    //         <Col lg="6" md="6">
-    //           <div className="hero__content">
-    //             <p className="hero__subtitle"> {t('trending')} {year}</p>
-    //             <h2>{t('title')}</h2>
-    //             <p>
-    //               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    //               Nesciunt porro optio, pariatur quisquam magnam aliquid sed
-    //               quod deleniti quia at?
-    //             </p>
-    //             <motion.button whileHover={{ scale: 1.1 }} className="buy__btn">
-    //               <Link to={"/shop"}>SHOP NOW</Link>
-    //             </motion.button>
-    //           </div>
-    //         </Col>
-    //         <Col sm="12" lg="6" md="6">
-    //           <div className="img__side">
-    //             <img src={heroImg} alt="" />
-    //           </div>
-    //         </Col>
-    //       </Row>
-    //     </Container>
-    //   </section>
-    //   <Services />
-    //   <section className="trending__products">
-    //     <Container>
-    //       <Row>
-    //         <Col lg="12" className="text-center mt-5">
-    //           <h2>{t("Trending Products")}</h2>
-    //         </Col>
-    //         <ProductList data={trendingProducts} />
-    //       </Row>
-    //     </Container>
-    //   </section>
-    //   <section className="bestSales__products mt-5">
-    //     <Container>
-    //       <Row>
-    //         <Col lg="12" className="text-center mb-5">
-    //           <h2>{t("Best Sales")}</h2>
-    //         </Col>
-    //         <ProductList data={bestSalesProducts} />
-    //       </Row>
-    //     </Container>
-    //   </section>
-    //   <section className="newArrivals__products mt-5">
-    //     <Container>
-    //       <Row>
-    //         <Col lg="12" className="text-center mb-5">
-    //           <h2>{t("New Arrivals")}</h2>
-    //         </Col>
-    //         <ProductList data={arrivalProducts} />
-    //         <ProductList data={wirelessProducts} />
-    //       </Row>
-    //     </Container>
-    //   </section>
-    //   <section className="newArrivals__products mt-5">
-    //     <Container>
-    //       <Row>
-    //         <Col lg="12" className="text-center mb-5">
-    //           <h2>{t("Popular in Category")}</h2>
-    //         </Col>
-    //         <ProductList data={popularProducts} />
-    //       </Row>
-    //     </Container>
-    //   </section>
-
-    // </Helmet>
+   
     <Helmet title={"Home Page"}>
       <section className="hero__section">
         <Container>
