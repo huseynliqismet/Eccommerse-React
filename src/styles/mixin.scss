@@ -1,0 +1,10 @@
+@mixin responsive($max-width) {
+    @media screen and (max-width:$max-width){
+        @content;
+    }
+}
+@mixin responsive__middle($min_width, $max-width){
+    @media (min-width:$min-width) and (max-width: $max-width) {
+        @content
+    }
+}
