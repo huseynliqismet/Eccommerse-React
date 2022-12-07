@@ -8,27 +8,45 @@ import CommonSection from '../../components/UI/CommonSection'
 import ProductList from '../../components/UI/ProductList'
 import '../../styles/shop.scss'
 const Shop = () => {
-  const {t} = useTranslation(["shop"])
+  const { t } = useTranslation(["shop"])
   const [productsData, setProductsData] = useState(products)
 
-
-  const handleSearch = (e) =>{
+  const handleFilter = (e) => {
+    const filterData = e.target.value
+    if (filterData === "mobile") {
+      const filteredProducts = products.filter(item => item.category === "mobile")
+      setProductsData(filteredProducts)
+    }
+    if (filterData === "chair") {
+      const filteredProducts = products.filter(item => item.category === "chair")
+      setProductsData(filteredProducts)
+    }
+    if (filterData === "watch") {
+      const filteredProducts = products.filter(item => item.category === "watch")
+      setProductsData(filteredProducts)
+    }
+    if (filterData === "wireless") {
+      const filteredProducts = products.filter(item => item.category === "wireless")
+      setProductsData(filteredProducts)
+    }
+  }
+  const handleSearch = (e) => {
     const searchTerm = e.target.value;
     const searchedProducts = products.filter(item =>
-        item.productName.toLowerCase().includes(searchTerm.toLowerCase())
+      item.productName.toLowerCase().includes(searchTerm.toLowerCase())
     )
     setProductsData(searchedProducts)
   }
   return (
     <Helmet title="Shop">
-      <CommonSection  title={t("common")} />
+      <CommonSection title={t("common")} />
       <section>
         <Container>
           <Row>
-            <Col lg='3'md='6'>
+            <Col lg='3' md='6'>
               <div className="filter__widget">
-                <select>
-                  <option>Filter by Category</option>
+                <select onChange={handleFilter}>
+                  <option>{t("filter")}</option>
                   <option value="mobile">Mobile</option>
                   <option value="chair">Chair</option>
                   <option value="watch">Watch</option>
@@ -48,19 +66,19 @@ const Shop = () => {
       <section>
         <Container>
           <Row>
-          {
+            {
 
 
-            productsData.length === 0 ? 
-            (
-              <h1 className='text-center'>No product found</h1>
-            ) :
-            (
-              <ProductList data={productsData} />
-            )
-          }
+              productsData.length === 0 ?
+                (
+                  <h1 className='text-center'>No product found</h1>
+                ) :
+                (
+                  <ProductList data={productsData} />
+                )
+            }
           </Row>
-         
+
         </Container>
       </section>
     </Helmet>

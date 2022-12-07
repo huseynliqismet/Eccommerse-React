@@ -1,3 +1,4 @@
 {
-   "common" : "Products"
+   "common" : "Products",
+   "filter": "Filter by Category"
 }

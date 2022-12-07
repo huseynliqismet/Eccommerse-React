@@ -1,10 +1,11 @@
 {
     "home": "Ev",
     "shop": "Magaza",
-    "cart": "Cart",
+    "cart": "Kart",
     "about": "Haqqimizda",
     "company": "Sirket",
     "platform": "Platform",
     "subscribe": "Abune",
-    "news": "Ən son xəbərləri və yenilikləri birbaşa gələnlər qutunuzda əldə edin."
+    "news": "Ən son xəbərləri və yenilikləri birbaşa gələnlər qutunuzda əldə edin.",
+    "checkout": "Sebet"
 }

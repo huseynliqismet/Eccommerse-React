@@ -64,7 +64,7 @@ const Footer = () => {
                   <li><Link to="/">{t("home")}</Link></li>
                   <li><Link to="/">{t("about")}</Link></li>
                   <li><Link to="/">{t("cart")}</Link></li>
-                  <li><Link to="/">Checkout</Link></li>
+                  <li><Link to="/">{t("checkout")}</Link></li>
                   <li><Link to="/">{t("shop")}</Link></li>
 
                 </ul>
