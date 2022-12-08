@@ -6,7 +6,10 @@ import CommonSection from '../../components/UI/CommonSection'
 import { cartActions } from '../../redux/slices/cartSlice'
 import { motion } from 'framer-motion'
 import '../../styles/cart.scss'
+import { useTranslation } from 'react-i18next'
 const Cart = () => {
+  const { t } = useTranslation(["cart_shopping"])
+
   const cartItems = useSelector((state) => state.cart.cartItems)
   const totalAmount = useSelector((state) => state.cart.totalAmount)
   return (
@@ -21,17 +24,17 @@ const Cart = () => {
               {
                 cartItems.length === 0?
                 (
-                  <h1 className='text-center pt-5'>Basket is empty</h1>
+                  <h1 className='text-center pt-5'>{t("basket")}</h1>
                 ):
                 (
                   <table className='table bordered'>
                     <thead>
                       <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Delete</th>
+                        <th>{t("image")}</th>
+                        <th>{t("title")}</th>
+                        <th>{t("price")}</th>
+                        <th>{t("quantity")}</th>
+                        <th>{t("delete")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -48,11 +51,11 @@ const Cart = () => {
             </Col>
             <Col lg="3">
               <div>
-                <h6 className="d-flex align-items-center justify-content-between">Umumi Qiymet</h6>
+                <h6 className="d-flex align-items-center justify-content-between">{t("total")}</h6>
                 <span className="fs-4 fw-bold">${totalAmount}</span>
                 <p className="fs-6 mt-2">
-                taxes and shipping will calculate in checkout
-              </p>
+                  {t("tax")}
+                </p>
               </div>
             </Col>
           </Row>
@@ -76,7 +79,7 @@ const Tr = ({item}) =>{
       </td>
       <td><p>{item.productName}</p></td>
       <td><p>$ {item.price}</p></td>
-      <td><p> {item.quantity} </p></td>
+      <td><p>{item.quantity}</p></td>
       <td>
         <p> 
         <motion.i

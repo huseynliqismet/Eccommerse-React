@@ -14,7 +14,7 @@ i18n.use(Backend)
         },
         fallbackLng:"en",
         debug:true,
-        ns: ["header", "home", "cart", "footers", "clock", "productDetail", "shop"],
+        ns: ["header", "home", "cart", "footers", "clock", "productDetail", "shop", "cart_shopping"],
         interpolation:{
             escapeValue:false,
             formatSeparator: ","

@@ -5,9 +5,9 @@ import {
 
 
 const initialState = {
-    cartItems: [],
+    cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
     totalAmount: 0,
-    totalQuantity: 0
+    totalQuantity:  localStorage.getItem("totalQuantity") ? JSON.parse(localStorage.getItem("totalQuantity")) : 0,
 }
 
 const cartSlice = createSlice({
@@ -32,7 +32,11 @@ const cartSlice = createSlice({
                 existingItem.quantity++
                 existingItem.totalPrice = Number(existingItem.totalPrice) + Number(newItem.price)
             }
+            
             state.totalAmount = state.cartItems.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0)
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+            localStorage.setItem("totalQuantity", JSON.stringify(state.totalQuantity))
+           
         },
         deleteItem: (state, action) => {
             const id = action.payload
@@ -45,8 +49,8 @@ const cartSlice = createSlice({
                 total + Number(item.price) * Number(item.quantity), 0
 
             )
-           
-            
+           localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+           localStorage.setItem("totalQuantity", JSON.stringify(state.totalQuantity))
             
         },
        

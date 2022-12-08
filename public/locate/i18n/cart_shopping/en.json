@@ -1,0 +1,10 @@
+{
+   "basket": "Basket is empty",
+   "total": "Total",
+   "tax" : "Taxes and shipping will calculate in checkout",
+   "image": "Image",
+   "title": "Title",
+   "price": "Price",
+   "quantity": "Quantity",
+   "delete": "Delete"
+}
