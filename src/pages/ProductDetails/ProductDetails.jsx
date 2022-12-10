@@ -40,7 +40,6 @@ const ProductDetails = () => {
         productName,
         price
     }))
-    toast.success("Added to card")
   }
   return (
     

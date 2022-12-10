@@ -5,12 +5,11 @@ import './i18n'
 function App() {
   return ( 
     <>
-
       <Layout/>
-  
     </>
  )
   
 }
+
 
 export default App;

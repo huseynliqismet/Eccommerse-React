@@ -95,7 +95,7 @@ const Header = () => {
             <div className="nav__icons">
               <Box className='box' sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
-                  <InputLabel style={{color:"#001727"}}  id="demo-simple-select-label">Language</InputLabel>
+                  <InputLabel style={{ color: "#001727" }} id="demo-simple-select-label">Language</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -104,11 +104,11 @@ const Header = () => {
                     onChange={onChangeLanguage}
                   >
                     {
-                      language?.map((item,index) => (
-                       <MenuItem  key={index} value={item.lan}>{item.lan.toUpperCase()}</MenuItem>
+                      language?.map((item, index) => (
+                        <MenuItem key={index} value={item.lan}>{item.lan.toUpperCase()}</MenuItem>
                       ))
                     }
-                   
+
                   </Select>
                 </FormControl>
               </Box>
@@ -122,10 +122,15 @@ const Header = () => {
               <span className="fav__icon">
                 <i className='ri-heart-fill'></i>
                 <span className='badge'>1</span>
+
               </span>
+
               <span className="cart__icon">
-                <i className="ri-shopping-basket-2-line"></i>
-                <span className='badge'>{totalQuantity}</span>
+                <Link to="cart">
+                  <i className="ri-shopping-basket-2-line"></i>
+                  <span className='badge'>{totalQuantity}</span>
+                </Link>
+
               </span>
               <span>
                 <motion.img whileTap={{ scale: 1.2 }} src={userIcon} />

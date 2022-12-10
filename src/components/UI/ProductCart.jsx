@@ -15,7 +15,6 @@ const ProductCart = ({item, index}) => {
       price: item.price,
       imgUrl: item.imgUrl
     }))
-    toast.success("Added to cart")
   }
   return (
     <Col lg="3" md="4" className="mb-2" key={index}>

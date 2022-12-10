@@ -9,9 +9,12 @@ import '../../styles/cart.scss'
 import { useTranslation } from 'react-i18next'
 const Cart = () => {
   const { t } = useTranslation(["cart_shopping"])
-
+  const dispatch = useDispatch()
   const cartItems = useSelector((state) => state.cart.cartItems)
   const totalAmount = useSelector((state) => state.cart.totalAmount)
+  const deleteAllProduct = () =>{
+      dispatch(cartActions.deleteAllProduct())
+  }
   return (
    
     <Helmet title="Cart">
@@ -44,6 +47,9 @@ const Cart = () => {
                           ))
                       }
                     </tbody>
+                    <button className='clear__btn' onClick={deleteAllProduct}>
+                       Clear All
+                    </button>
 
                   </table>
                 )
@@ -63,9 +69,7 @@ const Cart = () => {
       </section>
     </Helmet>
   )
-
 }
-
 const Tr = ({item}) =>{
   const dispatch = useDispatch();
   const deleteProduct = () =>{

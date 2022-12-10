@@ -21,4 +21,19 @@ section{
           }
        }
     }
+    .clear__btn{
+      background-color: paleturquoise;
+      border: none;
+      outline: none;
+      padding: 10px  30px;
+      font-weight: 500;
+      border-radius: 30px;  
+      transition: .3s ease;
+      margin: 20px 0px 20px 0px;
+      border: 1px solid  paleturquoise;
+      cursor: pointer;
+      &:hover{
+       background: transparent;
+      }
+    }
 }

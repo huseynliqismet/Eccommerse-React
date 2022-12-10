@@ -17,15 +17,8 @@ root.render(
   <Suspense fallback={null}>
      <BrowserRouter>
        <Provider store={store}>
-         <ToastContainer
-           theme="dark"
-           position='top-right'
-           autoClose={3000}
-           closeOnClick
-           pauseOnHover
-         />    
+         <ToastContainer />    
            <App />
- 
        </Provider>
     </BrowserRouter>
   </Suspense>
